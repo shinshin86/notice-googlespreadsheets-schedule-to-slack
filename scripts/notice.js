@@ -65,6 +65,9 @@ function noticeWork() {
   // spreadsheet
   var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
   var sheet = spreadsheet.getSheetByName(getThisMonthSheetName());
+
+  if(!sheet) return null;
+
   var values = sheet.getDataRange().getValues();
   
   var dt = new Date();
